@@ -1,0 +1,48 @@
+/* Regras gerais */
+body {
+    background-color: #070718;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Estilo para a seção principal */
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Ajuste do iframe */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Ajuste para dispositivos móveis em modo retrato */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    iframe {
+        width: 100vh; /* Inverte largura e altura */
+        height: 100vw;
+        transform: rotate(-90deg); /* Rotaciona para paisagem */
+        transform-origin: center center; /* Mantém o centro como referência */
+    }
+    body {
+        overflow-x: hidden; /* Evita rolagem horizontal */
+    }
+}
+
+/* Ajuste para dispositivos móveis em modo paisagem */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    iframe {
+        width: 100%;
+        height: 100%;
+        transform: none; /* Sem rotação */
+    }
+}
